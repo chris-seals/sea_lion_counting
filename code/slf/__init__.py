@@ -11,6 +11,12 @@ import sys
 r = 0.4     #scale down
 width = 100 #patch size
 
+chip_sizes = {
+    'adult_females':80,
+    'adult_males':120,
+    'juveniles':60,
+    'pups':40
+}
 
 # Identify image file locations
 train_dotted_path = r'../data/TrainSmall2/TrainDotted/'
@@ -53,11 +59,12 @@ def get_blobs(dotted_image:str, clean_image:str):
 
 
 
-def create_df(files):
+def create_coord_df(files):
 
     """ Create a dataframe to hold the coordinates of all marked seals in the training data"""
     global class_names
     df = pd.DataFrame(index=files, columns=class_names)
+
 
     return df
 
@@ -143,4 +150,28 @@ def create_chip_dir():
             print(f'Directory exists for {sea_lion_type}.')
 
     return
+
+
+def create_chips(df):
+    """ Create chip images around each sea lion for further segmentation and labeling"""
+    for ix, row in df.iterrows():
+        for sea_lion_class, size in chip_sizes.items(): # for sea lion type:
+            print(sea_lion_class)
+            print(size)
+            #for pair in row[key]:
+                #print(pair)
+
+    return
+
+
+
+
+
+
+
+
+
+
+
+
 
