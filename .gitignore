@@ -1,0 +1,5 @@
+# Jetbrain's Softwares
+.idea/
+
+# Jupyter Files
+.ipynb_checkpoints/
