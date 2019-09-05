@@ -70,7 +70,7 @@ def count_classes(blobs, file, df):
     and append to coordinates dataframe."""
 
     # retrieve dotted_image path
-    dotted_image = retrieve_image_paths(file)[0]
+    dotted_image = cv2.imread(retrieve_image_paths(file)[0])
 
     # initialize lists - we will append a coordinate pair each time we find a dot of one of these classes of sea lion
     adult_males = []
@@ -85,11 +85,8 @@ def count_classes(blobs, file, df):
         y, x, s = blob
 
         # get the color of the pixel from Train Dotted in the center of the blob
-        try:
-            b, g, R = dotted_image[int(y)][int(x)][:]
-        except Exception as e:
-            print(e)
-            continue
+
+        b, g, R = dotted_image[int(y)][int(x)][:]
 
         # print(b,g,R)
         x1 = int((x * r) // width)
