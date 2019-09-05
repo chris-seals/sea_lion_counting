@@ -16,6 +16,10 @@ width = 100 #patch size
 train_dotted_path = r'../data/TrainSmall2/TrainDotted/'
 train_path = r'../data/TrainSmall2/Train/'
 
+class_names = ['adult_females', 'adult_males', 'juveniles', 'pups', 'subadult_males']
+
+results_dir = r'../results/bbox_chips/'
+
 
 def get_blobs(dotted_image:str, clean_image:str):
 
@@ -52,8 +56,7 @@ def get_blobs(dotted_image:str, clean_image:str):
 def create_df(files):
 
     """ Create a dataframe to hold the coordinates of all marked seals in the training data"""
-
-    class_names = ['adult_females', 'adult_males', 'juveniles', 'pups', 'subadult_males']
+    global class_names
     df = pd.DataFrame(index=files, columns=class_names)
 
     return df
@@ -125,3 +128,19 @@ def count_classes(blobs, file, df):
     df["pups"][file] = pups  # Ideal chip sizes:
 
     return
+
+
+def create_chip_dir():
+    """ Check if image/chip result locations exist. If they don't create them. """
+    import os.path
+    ##TODO Make this also create the bbox_chips if it doesn't already exist. os.makedirs didn't behave as expected
+    for sea_lion_type in class_names:
+        if not os.path.exists(results_dir+sea_lion_type):
+            print(f'Creating directory for {sea_lion_type}.')
+            #os.makedirs(results_dir)
+            os.mkdir(results_dir+sea_lion_type)
+        else:
+            print(f'Directory exists for {sea_lion_type}.')
+
+    return
+

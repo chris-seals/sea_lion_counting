@@ -13,16 +13,16 @@ filenames = [str(x)+'.jpg' for x in range(41,51)]
 
 # Create coordinate dataframe
 coordinates = slf.create_df(filenames)
-# Generate blobs
+
+# Iterate through our images
 for file in filenames:
+    # Extract the blobs from the marking dots
     blobs = slf.get_blobs(*slf.retrieve_image_paths(file))
+    # Tally up our classes/coordinates based on the dot blob colors, append coords to the dataframe
     slf.count_classes(blobs, file, coordinates)
 
-print(coordinates)
-# Extract dot locations
 
-# Create locations of sea lions
-# Iterate through the locations, extract bounding box by type of sea lion
+
 # 1. check for directory existence
 # 2. if not existing, create it
 # 3. save off chip for each bbox, and write chip path
