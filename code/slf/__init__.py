@@ -2,11 +2,14 @@
 
 import cv2
 import numpy as np
+import pandas as pd
 from skimage import feature
 import sys
 
 def get_blobs(dotted_image:str, clean_image:str):
+
     """ Given two images - one dotted and its clean match - return blobs """
+
     r = 0.4     #scale down
     width = 100 #patch size
 
@@ -32,5 +35,19 @@ def get_blobs(dotted_image:str, clean_image:str):
     h,w,d = clean_image.shape # (3328, 4992, 3)
 
     res=np.zeros((int((w*r)//width)+1,int((h*r)//width)+1,5), dtype='int16')
+    print(h,w,d)
 
     return blobs
+
+
+def create_df(files):
+
+    """ Create a dataframe to hold the coordinates of all marked seals in the training data"""
+
+    class_names = ['adult_females', 'adult_males', 'juveniles', 'pups', 'subadult_males']
+    coordinates_df = pd.DataFrame(index=files, columns=class_names)
+
+    return coordinates_df
+
+
+
