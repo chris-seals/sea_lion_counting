@@ -3,3 +3,6 @@
 
 # Jupyter Files
 .ipynb_checkpoints/
+
+# compiled
+.pyc
