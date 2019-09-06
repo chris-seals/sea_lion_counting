@@ -15,6 +15,7 @@ filenames = [str(x)+'.jpg' for x in range(41,51)]
 coordinates = slf.create_coord_df(filenames)
 # Iterate through our images
 for file in filenames:
+    print(f'Processing {file}')
     # Extract the blobs from the marking dots
     blobs = slf.get_blobs(*slf.retrieve_image_paths(file))
     # Tally up our classes/coordinates based on the dot blob colors, append coords to the dataframe
@@ -24,7 +25,7 @@ for file in filenames:
 # 2. if not existing, create it
 slf.create_chip_dir()
 
-
+slf.create_chips(coordinates)
 # Create chips
 
 # 3. save off chip for each bbox, and write chip path

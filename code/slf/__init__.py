@@ -7,6 +7,7 @@ import numpy as np
 import pandas as pd
 from skimage import feature
 import sys
+from tqdm import tqdm
 
 r = 0.4     #scale down
 width = 100 #patch size
@@ -15,7 +16,8 @@ chip_sizes = {
     'adult_females':80,
     'adult_males':120,
     'juveniles':60,
-    'pups':40
+    'pups':40,
+    'subadult_males':100
 }
 
 # Identify image file locations
@@ -25,6 +27,8 @@ train_path = r'../data/TrainSmall2/Train/'
 class_names = ['adult_females', 'adult_males', 'juveniles', 'pups', 'subadult_males']
 
 results_dir = r'../results/bbox_chips/'
+
+filenames = [str(x)+'.jpg' for x in range(41,51)]
 
 
 def get_blobs(dotted_image:str, clean_image:str):
@@ -53,7 +57,7 @@ def get_blobs(dotted_image:str, clean_image:str):
     h,w,d = clean_image.shape # (3328, 4992, 3)
 
     res=np.zeros((int((w*r)//width)+1,int((h*r)//width)+1,5), dtype='int16')
-    print(h,w,d)
+    #print(h,w,d)
 
     return blobs
 
@@ -154,14 +158,23 @@ def create_chip_dir():
 
 def create_chips(df):
     """ Create chip images around each sea lion for further segmentation and labeling"""
-    for ix, row in df.iterrows():
-        for sea_lion_class, size in chip_sizes.items(): # for sea lion type:
-            print(sea_lion_class)
-            print(size)
-            #for pair in row[key]:
-                #print(pair)
+    import os.path
+    for sea_lion_type in class_names:
+        chip_num = 0
+        for file in tqdm(filenames,total=len(filenames)):
+            for pair in tqdm(df[sea_lion_type][file], total=len(df[sea_lion_type][file]),desc=f'{sea_lion_type}-{file}'):
+                y, x = pair[0], pair[1]
+                width = int(chip_sizes.get(sea_lion_type) * 0.5)
+                height = int(chip_sizes.get(sea_lion_type) * 0.5)
+                chip = cv2.imread(retrieve_image_paths(file)[1]).copy()
+                chip = chip[x-width:x+width, y-height:y+height]
+                chip_num += 1
+                chip_name = f'{file.split(".")[0]}_{sea_lion_type}_{chip_num}.png'
+                cv2.imwrite(os.path.join(results_dir,sea_lion_type,chip_name), chip)
 
     return
+
+
 
 
 
