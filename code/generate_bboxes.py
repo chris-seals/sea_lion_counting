@@ -25,10 +25,12 @@ for file in filenames:
 # 2. if not existing, create it
 slf.create_chip_dir()
 
-slf.create_chips(coordinates)
+
 # Create chips
 
 # 3. save off chip for each bbox, and write chip path
+slf.create_chips(coordinates)
+
 
 coordinates.to_csv('../results/coordinates.csv')
 

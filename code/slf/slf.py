@@ -9,6 +9,7 @@ from skimage import feature
 import sys
 from tqdm import tqdm
 
+# define scaling and width size for initial
 r = 0.4     #scale down
 width = 100 #patch size
 
