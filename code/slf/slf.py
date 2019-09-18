@@ -53,7 +53,7 @@ def get_blobs(dotted_image:str, clean_image:str):
     dots_only_max_image = np.max(dots_only_image,axis=2)
 
     # detect blobs
-    blobs = feature.blob_log(dots_only_max_image, min_sigma=3, max_sigma=7, num_sigma=1, threshold=0.05)
+    blobs = feature.blob_log(dots_only_max_image, min_sigma=1, max_sigma=10, num_sigma=2, threshold=0.05)
 
     h,w,d = clean_image.shape # (3328, 4992, 3)
 
