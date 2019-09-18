@@ -1,10 +1,11 @@
 # Generate bounding boxes around the sea lions in the dotted images
 # These boxes are turned into image files and saved off in a folder structure
+import os
+import sys
 
-import cv2
-import numpy as np
-import pandas as pd
-import slf
+sys.path.append(os.getcwd()+'/code/')
+
+from slf import slf
 
 
 
