@@ -20,9 +20,9 @@ chip_sizes = {
     'subadult_males':100
 }
 
-mismatched = [3, 7, 9, 21, 30, 34, 71, 81, 89, 97, 151, 184, 215, 234, 242, 268, 290, 311, 331, 344, 380, 384, 406, 421,
-              469, 475, 490, 499, 507, 530, 531, 605, 607, 614, 621, 638, 644, 687, 712, 721, 767, 779, 781, 794, 800,
-              811, 839, 840, 869, 882, 901, 903, 905, 909, 913, 927, 946]
+# mismatched = [3, 7, 9, 21, 30, 34, 71, 81, 89, 97, 151, 184, 215, 234, 242, 268, 290, 311, 331, 344, 380, 384, 406, 421,
+#               469, 475, 490, 499, 507, 530, 531, 605, 607, 614, 621, 638, 644, 687, 712, 721, 767, 779, 781, 794, 800,
+#               811, 839, 840, 869, 882, 901, 903, 905, 909, 913, 927, 946]
 # Identify image file locations
 #train_dotted_path = r'../data/TrainSmall2/TrainDotted/'
 #train_path = r'../data/TrainSmall2/Train/'
@@ -34,7 +34,7 @@ class_names = ['adult_females', 'adult_males', 'juveniles', 'pups', 'subadult_ma
 results_dir = r'../results/bbox_chips/'
 
 #filenames = [str(x)+'.jpg' for x in range(41,51)]
-filenames = [str(x)+'.jpg' for x in range(0,20) if x not in mismatched]   # skip files with mismatched labels
+#filenames = [str(x)+'.jpg' for x in range(0,20) if x not in mismatched]   # skip files with mismatched labels
 
 def get_blobs(dotted_image:str, clean_image:str):
     assert dotted_image[0:2] == clean_image[0:2]
@@ -161,13 +161,13 @@ def create_chip_dir():
     return
 
 
-def create_chips(df):
+def create_chips(df, filenames):
     """ Create chip images around each sea lion for further segmentation and labeling"""
     import os.path
     for sea_lion_type in class_names:
         chip_num = 0
         for file in tqdm(filenames,total=len(filenames)):
-            for pair in tqdm(df[sea_lion_type][file], total=len(df[sea_lion_type][file]),desc=f'{sea_lion_type}-{file}'):
+            for pair in df[sea_lion_type][file]:
                 y, x = pair[0], pair[1]
                 width = int(chip_sizes.get(sea_lion_type) * 0.5)
                 height = int(chip_sizes.get(sea_lion_type) * 0.5)
