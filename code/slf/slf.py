@@ -20,19 +20,24 @@ chip_sizes = {
     'subadult_males':100
 }
 
+mismatched = [3, 7, 9, 21, 30, 34, 71, 81, 89, 97, 151, 184, 215, 234, 242, 268, 290, 311, 331, 344, 380, 384, 406, 421,
+              469, 475, 490, 499, 507, 530, 531, 605, 607, 614, 621, 638, 644, 687, 712, 721, 767, 779, 781, 794, 800,
+              811, 839, 840, 869, 882, 901, 903, 905, 909, 913, 927, 946]
 # Identify image file locations
-train_dotted_path = r'../data/TrainSmall2/TrainDotted/'
-train_path = r'../data/TrainSmall2/Train/'
+#train_dotted_path = r'../data/TrainSmall2/TrainDotted/'
+#train_path = r'../data/TrainSmall2/Train/'
+train_dotted_path = r'C:/Users/604572/.kaggle/KaggleNOAASeaLions/TrainDotted/'
+train_path = r'C:/Users/604572/.kaggle/KaggleNOAASeaLions/Train/'
 
 class_names = ['adult_females', 'adult_males', 'juveniles', 'pups', 'subadult_males']
 
 results_dir = r'../results/bbox_chips/'
 
-filenames = [str(x)+'.jpg' for x in range(41,51)]
-
+#filenames = [str(x)+'.jpg' for x in range(41,51)]
+filenames = [str(x)+'.jpg' for x in range(0,20) if x not in mismatched]   # skip files with mismatched labels
 
 def get_blobs(dotted_image:str, clean_image:str):
-
+    assert dotted_image[0:2] == clean_image[0:2]
     """ Given two images - one dotted and its clean match - return blobs """
 
     # Grab arguments
