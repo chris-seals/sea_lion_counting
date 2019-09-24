@@ -24,10 +24,10 @@ chip_sizes = {
 #               469, 475, 490, 499, 507, 530, 531, 605, 607, 614, 621, 638, 644, 687, 712, 721, 767, 779, 781, 794, 800,
 #               811, 839, 840, 869, 882, 901, 903, 905, 909, 913, 927, 946]
 # Identify image file locations
-#train_dotted_path = r'../data/TrainSmall2/TrainDotted/'
-#train_path = r'../data/TrainSmall2/Train/'
-train_dotted_path = r'C:/Users/604572/.kaggle/KaggleNOAASeaLions/TrainDotted/'
-train_path = r'C:/Users/604572/.kaggle/KaggleNOAASeaLions/Train/'
+train_dotted_path = r'../data/TrainSmall2/TrainDotted/'
+train_path = r'../data/TrainSmall2/Train/'
+#train_dotted_path = r'C:/Users/604572/.kaggle/KaggleNOAASeaLions/TrainDotted/'
+#train_path = r'C:/Users/604572/.kaggle/KaggleNOAASeaLions/Train/'
 
 class_names = ['adult_females', 'adult_males', 'juveniles', 'pups', 'subadult_males']
 
@@ -160,22 +160,39 @@ def create_chip_dir():
 
     return
 
+def save_chip(pair, sea_lion_type, file, chip_num):
+    import os.path
+
+    y, x = pair[0], pair[1]
+    width = int(chip_sizes.get(sea_lion_type) * 0.5)
+    height = int(chip_sizes.get(sea_lion_type) * 0.5)
+    chip = cv2.imread(retrieve_image_paths(file)[1]).copy()
+    chip = chip[x - width:x + width, y - height:y + height]
+    chip_name = f'{file.split(".")[0]}_{sea_lion_type}_{chip_num}.png'
+    cv2.imwrite(os.path.join(results_dir, sea_lion_type, chip_name), chip)
+
 
 def create_chips(df, filenames):
     """ Create chip images around each sea lion for further segmentation and labeling"""
-    import os.path
+
+    import queue
+    import multiprocessing as mp
+
+    num_workers = mp.cpu_count()
+    pool = mp.Pool(num_workers)
+
+    que = queue.Queue()
+    threads_list = list()
+
     for sea_lion_type in class_names:
         chip_num = 0
         for file in tqdm(filenames,total=len(filenames)):
             for pair in df[sea_lion_type][file]:
-                y, x = pair[0], pair[1]
-                width = int(chip_sizes.get(sea_lion_type) * 0.5)
-                height = int(chip_sizes.get(sea_lion_type) * 0.5)
-                chip = cv2.imread(retrieve_image_paths(file)[1]).copy()
-                chip = chip[x-width:x+width, y-height:y+height]
                 chip_num += 1
-                chip_name = f'{file.split(".")[0]}_{sea_lion_type}_{chip_num}.png'
-                cv2.imwrite(os.path.join(results_dir,sea_lion_type,chip_name), chip)
+                pool.apply_async(save_chip, args=(pair, sea_lion_type, file, chip_num))
+
+    pool.close()
+    pool.join()
 
     return
 

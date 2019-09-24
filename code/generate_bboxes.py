@@ -7,35 +7,37 @@ sys.path.append(os.getcwd()+'/code/')
 
 from slf import slf
 
-# Create image filenames
-#filenames = [str(x)+'.jpg' for x in range(41,51)]
-mismatched = [3, 7, 9, 21, 30, 34, 71, 81, 89, 97, 151, 184, 215, 234, 242, 268, 290, 311, 331, 344, 380, 384, 406, 421,
-              469, 475, 490, 499, 507, 530, 531, 605, 607, 614, 621, 638, 644, 687, 712, 721, 767, 779, 781, 794, 800,
-              811, 839, 840, 869, 882, 901, 903, 905, 909, 913, 927, 946]
-filenames = [str(x)+'.jpg' for x in range(20,50) if x not in mismatched]
+if __name__ == '__main__':
 
-# Create coordinate dataframe
-coordinates = slf.create_coord_df(filenames)
-# Iterate through our images
-for file in filenames:
-    if int(file.split('.')[0]) % 100 == 0:  # dont print every filename, just once every 100 for progress updates
-        print(f'Processing {file}')
-    # Extract the blobs from the marking dots
-    blobs = slf.get_blobs(*slf.retrieve_image_paths(file))
-    # Tally up our classes/coordinates based on the dot blob colors, append coords to the dataframe
-    slf.count_classes(blobs, file, coordinates)
+    # Create image filenames
+    mismatched = [3, 7, 9, 21, 30, 34, 71, 81, 89, 97, 151, 184, 215, 234, 242, 268, 290, 311, 331, 344, 380, 384, 406, 421,
+                  469, 475, 490, 499, 507, 530, 531, 605, 607, 614, 621, 638, 644, 687, 712, 721, 767, 779, 781, 794, 800,
+                  811, 839, 840, 869, 882, 901, 903, 905, 909, 913, 927, 946]
+    filenames = [str(x)+'.jpg' for x in range(41,51) if x not in mismatched]
+    #filenames = [str(x)+'.jpg' for x in range(20,50) if x not in mismatched]
 
-# 1. check for directory existence
-# 2. if not existing, create it
-slf.create_chip_dir()
+    # Create coordinate dataframe
+    coordinates = slf.create_coord_df(filenames)
+    # Iterate through our images
+    for file in filenames:
+        if int(file.split('.')[0]) % 100 == 0:  # dont print every filename, just once every 100 for progress updates
+            print(f'Processing {file}')
+        # Extract the blobs from the marking dots
+        blobs = slf.get_blobs(*slf.retrieve_image_paths(file))
+        # Tally up our classes/coordinates based on the dot blob colors, append coords to the dataframe
+        slf.count_classes(blobs, file, coordinates)
 
-
-# Create chips
-
-# 3. save off chip for each bbox, and write chip path
-slf.create_chips(coordinates, filenames)
+    # 1. check for directory existence
+    # 2. if not existing, create it
+    slf.create_chip_dir()
 
 
-coordinates.to_csv('../results/coordinates.csv')
+    # Create chips
+
+    # 3. save off chip for each bbox, and write chip path
+    slf.create_chips(coordinates, filenames)
+
+
+    coordinates.to_csv('../results/coordinates.csv')
 
 
