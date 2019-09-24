@@ -13,6 +13,8 @@ from multiprocessing import Manager
 
 
 def extract_blobs(file, coordinates, coordinate_list):
+    if int(file.split('.')[0]) % 100 == 0:  # dont print every filename, just once every 100 for progress updates
+        print(f'Processing {file}')
     # Extract the blobs from the marking dots
     blobs = slf.get_blobs(*slf.retrieve_image_paths(file))
     # Tally up our classes/coordinates based on the dot blob colors, append coords to the dataframe
@@ -45,9 +47,6 @@ if __name__ == '__main__':
 
     # Iterate through our images
     for file in filenames:
-        if int(file.split('.')[0]) % 100 == 0:  # dont print every filename, just once every 100 for progress updates
-            print(f'Processing {file}')
-
         pool.apply_async(extract_blobs, args=(file, coordinates, coordinate_list))
 
     pool.close()
