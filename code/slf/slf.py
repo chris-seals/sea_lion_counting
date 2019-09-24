@@ -67,13 +67,11 @@ def get_blobs(dotted_image:str, clean_image:str):
     return blobs
 
 
-
 def create_coord_df(files):
 
     """ Create a dataframe to hold the coordinates of all marked seals in the training data"""
     global class_names
     df = pd.DataFrame(index=files, columns=class_names)
-
 
     return df
 
@@ -82,6 +80,7 @@ def retrieve_image_paths(file):
     dotted = train_dotted_path + file
     undotted = train_path + file
     return dotted, undotted
+
 
 def count_classes(blobs, file, df):
 
@@ -160,6 +159,8 @@ def create_chip_dir():
 
     return
 
+
+# Save the chip to file
 def save_chip(pair, sea_lion_type, file, chip_num):
     import os.path
 
@@ -172,17 +173,14 @@ def save_chip(pair, sea_lion_type, file, chip_num):
     cv2.imwrite(os.path.join(results_dir, sea_lion_type, chip_name), chip)
 
 
+# Create the chips
 def create_chips(df, filenames):
     """ Create chip images around each sea lion for further segmentation and labeling"""
 
-    import queue
     import multiprocessing as mp
 
     num_workers = mp.cpu_count()
     pool = mp.Pool(num_workers)
-
-    que = queue.Queue()
-    threads_list = list()
 
     for sea_lion_type in class_names:
         chip_num = 0
