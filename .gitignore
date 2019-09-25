@@ -9,9 +9,10 @@
 .DS_Store
 
 # Images
-*.jpg
-*.png
-*.tiff
+#*.jpg
+#*.png
+#*.tiff
 
 **/__pycache__
 .pkl
+**/bbox_chips
