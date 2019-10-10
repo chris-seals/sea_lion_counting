@@ -26,8 +26,8 @@ chip_sizes = {
 # Identify image file locations
 #train_dotted_path = r'../data/TrainSmall2/TrainDotted/'
 #train_path = r'../data/TrainSmall2/Train/'
-train_dotted_path = r'C:/Users/604572/.kaggle/KaggleNOAASeaLions/TrainDotted/'
-train_path = r'C:/Users/604572/.kaggle/KaggleNOAASeaLions/Train/'
+train_dotted_path = r'../data/TrainSmall2/TrainDotted/'
+train_path = r'../data/TrainSmall2/Train/'
 
 class_names = ['adult_females', 'adult_males', 'juveniles', 'pups', 'subadult_males']
 

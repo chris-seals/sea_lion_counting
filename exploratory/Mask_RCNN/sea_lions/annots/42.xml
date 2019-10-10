@@ -1,0 +1,257 @@
+<annotation>
+    <folder>Train</folder>
+    <filename>42.jpg</filename>
+    <path>C:\Users\604572\Desktop\Sea Lion Counting\data\TrainSmall2\Train\42.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>4992</width>
+        <height>3328</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>adult_females</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1646</xmin>
+            <ymin>3792</ymin>
+            <xmax>1726</xmax>
+            <ymax>3872</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>adult_females</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1618</xmin>
+            <ymin>4279</ymin>
+            <xmax>1698</xmax>
+            <ymax>4359</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>adult_females</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1602</xmin>
+            <ymin>4159</ymin>
+            <xmax>1682</xmax>
+            <ymax>4239</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>adult_females</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1594</xmin>
+            <ymin>4347</ymin>
+            <xmax>1674</xmax>
+            <ymax>4427</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>adult_females</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1591</xmin>
+            <ymin>3742</ymin>
+            <xmax>1671</xmax>
+            <ymax>3822</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>adult_females</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1589</xmin>
+            <ymin>4098</ymin>
+            <xmax>1669</xmax>
+            <ymax>4178</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>adult_females</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1584</xmin>
+            <ymin>4180</ymin>
+            <xmax>1664</xmax>
+            <ymax>4260</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>adult_females</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1550</xmin>
+            <ymin>4381</ymin>
+            <xmax>1630</xmax>
+            <ymax>4461</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>adult_females</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1513</xmin>
+            <ymin>4563</ymin>
+            <xmax>1593</xmax>
+            <ymax>4643</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>adult_females</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>530</xmin>
+            <ymin>4159</ymin>
+            <xmax>610</xmax>
+            <ymax>4239</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>adult_males</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>2446</xmin>
+            <ymin>4880</ymin>
+            <xmax>2566</xmax>
+            <ymax>5000</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>adult_males</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1869</xmin>
+            <ymin>4914</ymin>
+            <xmax>1989</xmax>
+            <ymax>5034</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>adult_males</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1823</xmin>
+            <ymin>4756</ymin>
+            <xmax>1943</xmax>
+            <ymax>4876</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>adult_males</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1565</xmin>
+            <ymin>4396</ymin>
+            <xmax>1685</xmax>
+            <ymax>4516</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>adult_males</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1452</xmin>
+            <ymin>4278</ymin>
+            <xmax>1572</xmax>
+            <ymax>4398</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>adult_males</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>406</xmin>
+            <ymin>4214</ymin>
+            <xmax>526</xmax>
+            <ymax>4334</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>adult_males</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>257</xmin>
+            <ymin>4818</ymin>
+            <xmax>377</xmax>
+            <ymax>4938</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>juveniles</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>516</xmin>
+            <ymin>4145</ymin>
+            <xmax>576</xmax>
+            <ymax>4205</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>subadult_males</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1665</xmin>
+            <ymin>3568</ymin>
+            <xmax>1765</xmax>
+            <ymax>3668</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>subadult_males</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1591</xmin>
+            <ymin>3961</ymin>
+            <xmax>1691</xmax>
+            <ymax>4061</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>subadult_males</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1555</xmin>
+            <ymin>4287</ymin>
+            <xmax>1655</xmax>
+            <ymax>4387</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>subadult_males</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1399</xmin>
+            <ymin>3603</ymin>
+            <xmax>1499</xmax>
+            <ymax>3703</ymax>
+        </bndbox>
+    </object>
+</annotation>

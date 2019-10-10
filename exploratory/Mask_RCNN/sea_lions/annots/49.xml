@@ -1,0 +1,224 @@
+<annotation>
+    <folder>Train</folder>
+    <filename>49.jpg</filename>
+    <path>C:\Users\604572\Desktop\Sea Lion Counting\data\TrainSmall2\Train\49.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>4992</width>
+        <height>3328</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>adult_females</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>2162</xmin>
+            <ymin>696</ymin>
+            <xmax>2242</xmax>
+            <ymax>776</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>adult_females</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>2108</xmin>
+            <ymin>869</ymin>
+            <xmax>2188</xmax>
+            <ymax>949</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>adult_females</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>2025</xmin>
+            <ymin>975</ymin>
+            <xmax>2105</xmax>
+            <ymax>1055</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>adult_females</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1993</xmin>
+            <ymin>602</ymin>
+            <xmax>2073</xmax>
+            <ymax>682</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>juveniles</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>2325</xmin>
+            <ymin>559</ymin>
+            <xmax>2385</xmax>
+            <ymax>619</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>juveniles</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>2316</xmin>
+            <ymin>407</ymin>
+            <xmax>2376</xmax>
+            <ymax>467</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>juveniles</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>2302</xmin>
+            <ymin>402</ymin>
+            <xmax>2362</xmax>
+            <ymax>462</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>juveniles</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>2292</xmin>
+            <ymin>386</ymin>
+            <xmax>2352</xmax>
+            <ymax>446</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>juveniles</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>2218</xmin>
+            <ymin>308</ymin>
+            <xmax>2278</xmax>
+            <ymax>368</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>juveniles</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>2172</xmin>
+            <ymin>778</ymin>
+            <xmax>2232</xmax>
+            <ymax>838</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>juveniles</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>2161</xmin>
+            <ymin>824</ymin>
+            <xmax>2221</xmax>
+            <ymax>884</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>juveniles</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>2152</xmin>
+            <ymin>973</ymin>
+            <xmax>2212</xmax>
+            <ymax>1033</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>juveniles</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>2131</xmin>
+            <ymin>983</ymin>
+            <xmax>2191</xmax>
+            <ymax>1043</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>juveniles</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>2124</xmin>
+            <ymin>786</ymin>
+            <xmax>2184</xmax>
+            <ymax>846</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>juveniles</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>2097</xmin>
+            <ymin>876</ymin>
+            <xmax>2157</xmax>
+            <ymax>936</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>juveniles</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>2047</xmin>
+            <ymin>987</ymin>
+            <xmax>2107</xmax>
+            <ymax>1047</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>juveniles</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>2045</xmin>
+            <ymin>838</ymin>
+            <xmax>2105</xmax>
+            <ymax>898</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>juveniles</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>2027</xmin>
+            <ymin>908</ymin>
+            <xmax>2087</xmax>
+            <ymax>968</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>juveniles</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1985</xmin>
+            <ymin>596</ymin>
+            <xmax>2045</xmax>
+            <ymax>656</ymax>
+        </bndbox>
+    </object>
+</annotation>

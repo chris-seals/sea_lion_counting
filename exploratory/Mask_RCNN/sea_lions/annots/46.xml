@@ -1,0 +1,70 @@
+<annotation>
+    <folder>Train</folder>
+    <filename>46.jpg</filename>
+    <path>C:\Users\604572\Desktop\Sea Lion Counting\data\TrainSmall2\Train\46.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>5616</width>
+        <height>3744</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>adult_males</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1278</xmin>
+            <ymin>5358</ymin>
+            <xmax>1398</xmax>
+            <ymax>5478</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>subadult_males</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>2036</xmin>
+            <ymin>5322</ymin>
+            <xmax>2136</xmax>
+            <ymax>5422</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>subadult_males</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1435</xmin>
+            <ymin>5550</ymin>
+            <xmax>1535</xmax>
+            <ymax>5650</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>subadult_males</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1382</xmin>
+            <ymin>5519</ymin>
+            <xmax>1482</xmax>
+            <ymax>5619</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>subadult_males</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>1279</xmin>
+            <ymin>5442</ymin>
+            <xmax>1379</xmax>
+            <ymax>5542</ymax>
+        </bndbox>
+    </object>
+</annotation>

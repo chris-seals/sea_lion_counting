@@ -1,0 +1,26 @@
+<annotation>
+    <folder>Train</folder>
+    <filename>50.jpg</filename>
+    <path>C:\Users\604572\Desktop\Sea Lion Counting\data\TrainSmall2\Train\50.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>4992</width>
+        <height>3328</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>adult_males</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>2246</xmin>
+            <ymin>3623</ymin>
+            <xmax>2366</xmax>
+            <ymax>3743</ymax>
+        </bndbox>
+    </object>
+</annotation>
