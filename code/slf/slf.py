@@ -31,7 +31,7 @@ train_path = r'../data/TrainSmall2/Train/'
 
 class_names = ['adult_females', 'adult_males', 'juveniles', 'pups', 'subadult_males']
 
-results_dir = r'../results/bbox_chips/'
+results_dir = r'../results/smaller_bbox_chips/'
 
 #filenames = [str(x)+'.jpg' for x in range(41,51)]
 #filenames = [str(x)+'.jpg' for x in range(0,20) if x not in mismatched]   # skip files with mismatched labels
