@@ -83,8 +83,27 @@ class Dataset(object):
                     if img_count % 200 == 0:
                         print(f'Processing chip no.', img_count)
 
+    def reset_small_chips(self):
+        confirm = input('Are you sure you want to delete small chips? (y/n)')
+        if confirm == 'y':
+            import os
+            dirs = [self._small_chip_dotted_dir,
+                    self._small_chip_unmarked_dir]
+            for directory in dirs:
+                for file in os.listdir(directory):
+                    file_path = os.path.join(directory, file)
+                    try:
+                        if os.path.isfile(file_path):
+                            os.unlink(file_path)
 
-
+                    except Exception as e:
+                        print(e)
+            print("Small chips deleted, directories clean.")
+        elif confirm == 'n':
+            return
+        else:
+            print("invalid input, please hit 'y' or 'n'")
+            confirm = input('Are you sure you want to delete small chips? (y/n)')
 #### Run lob comparisons
 #### Record coordinates
 ####    -- Save coordinates off as one dictionary per image - of centerpoints?
@@ -98,4 +117,5 @@ class Dataset(object):
 #     image_2 = cv2.imread("../../data/TrainSmall2/Train/" + filename)
 
 images = Dataset()
-images.mini_chipper()
+#images.mini_chipper()
+#images.reset_small_chips()
