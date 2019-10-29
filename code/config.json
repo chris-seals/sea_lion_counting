@@ -1,0 +1,7 @@
+{
+	"dotted_data_dir" : "../data/TrainSmall2/TrainDotted/",
+	"unmarked_data_dir" : "../data/TrainSmall2/Train/",
+	"small_chip_unmarked_dir" : "../results/smaller_bbox_chips/Train/",
+	"small_chip_dotted_dir"	: "../results/smaller_bbox_chips/TrainDotted/"
+
+}

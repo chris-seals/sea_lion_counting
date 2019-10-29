@@ -1,11 +1,10 @@
-import os
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-import cv2
 import glob
-from skimage import feature
+import os
+
+import cv2
+import numpy as np
 from keras.preprocessing import image
+
 
 class Dataset(object):
     
@@ -98,38 +97,38 @@ class Dataset(object):
         
         return dot_arr, img_arr
     
-    def get_chip(self, c, img, size):
-
-        ### TODO ###
-        # Document better, rename variables
-        try:
-            y, x = int(c[0]), int(c[1])
-
-            #width, height of bbox
-            width = int(size * 0.5)
-            height = int(size * 0.5)
-
-            #retrieve chip of blob
-            chip = img[x - width:x + width, y - height:y + height]
-
-
-        except Exception as e:
-            print(e)
-
-        return chip
-    
-    def eval_chip_size(self, lion_type, chip_size, image):
-        ### TODO ###
-        # Document better
-
-        image = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
-
-        fig = plt.figure(figsize=(12, 12))
-        num_chips = len(coordinates_df[lion_type][0])
-        try:
-            for i in range(len(coordinates_df[lion_type][0])):
-                ax = fig.add_subplot(num_chips / 10 + 1, 10, i + 1)
-                plt.axis('off')
-                plt.imshow(get_chip(coordinates_df[lion_type][0][i], image, chip_size))
-        except ValueError:
-            pass
+    # def get_chip(self, c, img, size):
+    #
+    #     ### TODO ###
+    #     # Document better, rename variables
+    #     try:
+    #         y, x = int(c[0]), int(c[1])
+    #
+    #         #width, height of bbox
+    #         width = int(size * 0.5)
+    #         height = int(size * 0.5)
+    #
+    #         #retrieve chip of blob
+    #         chip = img[x - width:x + width, y - height:y + height]
+    #
+    #
+    #     except Exception as e:
+    #         print(e)
+    #
+    #     return chip
+    #
+    # def eval_chip_size(self, lion_type, chip_size, image):
+    #     ### TODO ###
+    #     # Document better
+    #
+    #     image = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
+    #
+    #     fig = plt.figure(figsize=(12, 12))
+    #     num_chips = len(coordinates_df[lion_type][0])
+    #     try:
+    #         for i in range(len(coordinates_df[lion_type][0])):
+    #             ax = fig.add_subplot(num_chips / 10 + 1, 10, i + 1)
+    #             plt.axis('off')
+    #             plt.imshow(get_chip(coordinates_df[lion_type][0][i], image, chip_size))
+    #     except ValueError:
+    #         pass
