@@ -9,6 +9,8 @@
     				"juveniles":60,
     				"pups":40,
 					"subadult_males":100
-					}
-
+					},
+	"chip_size" : 100,
+	"r" : 0.4,
+	"dataframe_path" : "../results/coordinates.csv"
 }
