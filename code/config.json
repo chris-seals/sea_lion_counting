@@ -2,6 +2,15 @@
 	"dotted_data_dir" : "../data/TrainSmall2/TrainDotted/",
 	"unmarked_data_dir" : "../data/TrainSmall2/Train/",
 	"small_chip_unmarked_dir" : "../results/smaller_bbox_chips/Train/",
-	"small_chip_dotted_dir"	: "../results/smaller_bbox_chips/TrainDotted/"
-
+	"small_chip_dotted_dir"	: "../results/smaller_bbox_chips/TrainDotted/",
+	"class_names" : ["adult_females", "adult_males", "juveniles", "pups", "subadult_males"],
+	"chip_sizes" : {"adult_females":80,
+    				"adult_males":120,
+    				"juveniles":60,
+    				"pups":40,
+					"subadult_males":100
+					},
+	"chip_size" : 100,
+	"r" : 0.4,
+	"dataframe_path" : "../results/coordinates.csv"
 }
