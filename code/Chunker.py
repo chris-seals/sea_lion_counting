@@ -2,7 +2,7 @@ import json
 import os
 import sys
 from glob import glob
-
+import pandas as pd
 import cv2
 import numpy as np
 
@@ -23,7 +23,7 @@ class Dataset(object):
         self._unmarked_data_dir = conf['unmarked_data_dir']
         self._small_chip_unmarked_dir = conf['small_chip_unmarked_dir']
         self._small_chip_dotted_dir = conf['small_chip_dotted_dir']
-
+        self.class_names = conf['class_names']
 
         self._target_size = target_size
         self._img_color_mode = img_color_mode
@@ -31,6 +31,10 @@ class Dataset(object):
         # Setting target image and mask sizes as (height, width, number of channels).
         self._img_channels = self.find_numb_channels(self._img_color_mode)
         self._target_img_size = (self._target_size[0], self._target_size[1], self._img_channels)
+
+        self.filenames = glob(self._unmarked_data_dir + '*.jpg')
+        self.filenames = [f.split('\\')[1] for f in self.filenames]
+
 
     def find_numb_channels(self, color_mode):
         """ Calculate number of channels according to color mode.
@@ -46,6 +50,7 @@ class Dataset(object):
             raise KeyError("This is not a valid color mode. Use 'rgb' or 'grayscale'")
         return numb_channels
 
+
     def mini_chipper(self, chip_size=(100,100)):
         """ Rip images into smaller chips.
                 Args:
@@ -56,10 +61,8 @@ class Dataset(object):
         img_count = 1
         r = 0.4 # Scaling down
 
-        filenames = glob(self._unmarked_data_dir+'*.jpg')
-        filenames = [f.split('\\')[1] for f in filenames]
-        print(filenames)
-        for file in filenames:
+
+        for file in self.filenames:
             #print(file)
             image_1 = cv2.imread(self._dotted_data_dir + file)
             image_2 = cv2.imread(self._unmarked_data_dir + file)
@@ -84,6 +87,7 @@ class Dataset(object):
                         print(f'Processing chip no.', img_count)
 
     def reset_small_chips(self):
+        """ Clears out the small chip directories in case a re-run is required."""
         confirm = input('Are you sure you want to delete small chips? (y/n)')
         if confirm == 'y':
             import os
@@ -104,6 +108,21 @@ class Dataset(object):
         else:
             print("invalid input, please hit 'y' or 'n'")
             confirm = input('Are you sure you want to delete small chips? (y/n)')
+
+    def create_df(self):
+
+        """ Create a dataframe to hold the coordinates of all marked seals in the training data.
+        Must be run AFTER mini-chipper... assertion check should catch this"""
+        chips = glob(self._small_chip_dotted_dir + '*.jpg')
+        assert len(chips) > 0
+        chip_index = [f.split('\\')[1] for f in chips]
+        self.df = pd.DataFrame(index=chip_index, columns=self.class_names)
+        self.df.to_csv('coordinates.csv')
+
+        return self.df
+
+
+## TODO:
 #### Run lob comparisons
 #### Record coordinates
 ####    -- Save coordinates off as one dictionary per image - of centerpoints?
@@ -117,5 +136,6 @@ class Dataset(object):
 #     image_2 = cv2.imread("../../data/TrainSmall2/Train/" + filename)
 
 images = Dataset()
-#images.mini_chipper()
+images.mini_chipper()
+images.create_df()
 #images.reset_small_chips()
