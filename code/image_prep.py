@@ -30,7 +30,6 @@ class Dataset(object):
         self.r = conf['r']  # % scaling down of the chips
         self.dataframe_path = conf['dataframe_path']  # location of the coordinates dataframe
         # Setting target image and mask sizes as (height, width, number of channels).
-        self._img_channels = self.find_numb_channels(self._img_color_mode)
         self._img_color_mode = img_color_mode
         self.filenames = glob(self._unmarked_data_dir + '*.jpg')
         self.filenames = [f.split('\\')[1] for f in self.filenames]
@@ -194,7 +193,7 @@ class Dataset(object):
         self.dataframe.to_csv(self.dataframe_path)
         return
 
-    
+
 ## TODO: Create .xml file for each image with pascal VOC writer module
 ## TODO: final desired inputs = directory of images and one .xml file for each image
 

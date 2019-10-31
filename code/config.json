@@ -10,8 +10,8 @@
     				"pups":40,
 					"subadult_males":100
 					},
-	"chip_size" : 100,
-	"r" : 0.4,
+	"chip_size" : 700,
+	"r" : 1.0,
 	"dataframe_path" : "../results/coordinates.csv",
 	"annotation_file_path" : "../results/smaller_bbox_chips/annot/"
 }

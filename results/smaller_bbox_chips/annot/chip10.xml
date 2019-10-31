@@ -6,8 +6,8 @@
         <database>Unknown</database>
     </source>
     <size>
-        <width>100</width>
-        <height>100</height>
+        <width>700</width>
+        <height>700</height>
         <depth>3</depth>
     </size>
     <segmented>0</segmented>

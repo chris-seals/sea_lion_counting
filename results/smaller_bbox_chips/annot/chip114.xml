@@ -6,10 +6,21 @@
         <database>Unknown</database>
     </source>
     <size>
-        <width>100</width>
-        <height>100</height>
+        <width>700</width>
+        <height>700</height>
         <depth>3</depth>
     </size>
     <segmented>0</segmented>
-
+    <object>
+        <name>subadult_males</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>490</xmin>
+            <ymin>100</ymin>
+            <xmax>590</xmax>
+            <ymax>200</ymax>
+        </bndbox>
+    </object>
 </annotation>
