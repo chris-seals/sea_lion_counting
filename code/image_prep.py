@@ -230,7 +230,7 @@ class Dataset(object):
 #     image_2 = cv2.imread("../../data/TrainSmall2/Train/" + filename)
 
 images = Dataset()
+images.reset_small_chips()
 images.mini_chipper()
 images.create_df()
 images.retrieve_coords()
-#images.reset_small_chips()
