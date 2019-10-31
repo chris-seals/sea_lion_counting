@@ -1,0 +1,70 @@
+<annotation>
+    <folder>Train</folder>
+    <filename>chip1823.jpg</filename>
+    <path>C:\Users\604572\Desktop\Sea Lion Counting\results\smaller_bbox_chips\Train\chip1823.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>100</width>
+        <height>100</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>adult_females</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>31</xmin>
+            <ymin>23</ymin>
+            <xmax>111</xmax>
+            <ymax>103</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>adult_females</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>30</xmin>
+            <ymin>-27</ymin>
+            <xmax>110</xmax>
+            <ymax>53</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>adult_females</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>16</xmin>
+            <ymin>44</ymin>
+            <xmax>96</xmax>
+            <ymax>124</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>adult_females</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>-33</xmin>
+            <ymin>9</ymin>
+            <xmax>47</xmax>
+            <ymax>89</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>pups</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>-4</xmin>
+            <ymin>13</ymin>
+            <xmax>36</xmax>
+            <ymax>53</ymax>
+        </bndbox>
+    </object>
+</annotation>

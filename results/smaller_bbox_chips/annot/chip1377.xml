@@ -1,0 +1,15 @@
+<annotation>
+    <folder>Train</folder>
+    <filename>chip1377.jpg</filename>
+    <path>C:\Users\604572\Desktop\Sea Lion Counting\results\smaller_bbox_chips\Train\chip1377.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>100</width>
+        <height>100</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+
+</annotation>

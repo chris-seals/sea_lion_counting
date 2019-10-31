@@ -1,0 +1,48 @@
+<annotation>
+    <folder>Train</folder>
+    <filename>chip1135.jpg</filename>
+    <path>C:\Users\604572\Desktop\Sea Lion Counting\results\smaller_bbox_chips\Train\chip1135.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>100</width>
+        <height>100</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>adult_females</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>-38</xmin>
+            <ymin>0</ymin>
+            <xmax>42</xmax>
+            <ymax>80</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>juveniles</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>17</xmin>
+            <ymin>59</ymin>
+            <xmax>77</xmax>
+            <ymax>119</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>juveniles</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>-30</xmin>
+            <ymin>-7</ymin>
+            <xmax>30</xmax>
+            <ymax>53</ymax>
+        </bndbox>
+    </object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+    <folder>Train</folder>
+    <filename>chip713.jpg</filename>
+    <path>C:\Users\604572\Desktop\Sea Lion Counting\results\smaller_bbox_chips\Train\chip713.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>100</width>
+        <height>100</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>adult_females</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>59</xmin>
+            <ymin>-1</ymin>
+            <xmax>139</xmax>
+            <ymax>79</ymax>
+        </bndbox>
+    </object>
+</annotation>

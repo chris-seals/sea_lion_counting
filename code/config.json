@@ -12,5 +12,6 @@
 					},
 	"chip_size" : 100,
 	"r" : 0.4,
-	"dataframe_path" : "../results/coordinates.csv"
+	"dataframe_path" : "../results/coordinates.csv",
+	"annotation_file_path" : "../results/smaller_bbox_chips/annot/"
 }
