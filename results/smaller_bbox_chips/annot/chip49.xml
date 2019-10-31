@@ -6,10 +6,32 @@
         <database>Unknown</database>
     </source>
     <size>
-        <width>100</width>
-        <height>100</height>
+        <width>700</width>
+        <height>700</height>
         <depth>3</depth>
     </size>
     <segmented>0</segmented>
-
+    <object>
+        <name>adult_females</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>530</xmin>
+            <ymin>659</ymin>
+            <xmax>610</xmax>
+            <ymax>739</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>juveniles</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>516</xmin>
+            <ymin>645</ymin>
+            <xmax>576</xmax>
+            <ymax>705</ymax>
+        </bndbox>
+    </object>
 </annotation>

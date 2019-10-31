@@ -36,6 +36,25 @@ class Labeler(object):
             os.mkdir(self.annot_path)
         return
 
+    def reset_xml(self):
+        """ Clears out the small chip directories in case a re-run is required."""
+        confirm = input('Are you sure you want to delete annotation data? (y/n)')
+        if confirm == 'y':
+            for file in os.listdir(self.annot_path):
+                file_path = os.path.join(self.annot_path, file)
+                try:
+                    if os.path.isfile(file_path):
+                        os.unlink(file_path)
+                except Exception as e:
+                    print(e)
+            print("Small chips deleted, directories clean.")
+        elif confirm == 'n':
+            return
+        else:
+            print("invalid input, please hit 'y' or 'n'")
+            confirm = input('Are you sure you want to delete annotation data? (y/n)')
+
+
     def create_xml(self):
         coordinates = pd.read_csv(self.dataframe_path, index_col=0)
         for index, row in tqdm(coordinates.iterrows(),total=coordinates.shape[0]):
@@ -54,6 +73,7 @@ class Labeler(object):
             annot_writer.save(self.annot_path+index.split('.')[0]+'.xml')
 
 labeler = Labeler()
+labeler.reset_xml()
 labeler.create_dir()
 labeler.create_xml()
 

@@ -6,87 +6,10 @@
         <database>Unknown</database>
     </source>
     <size>
-        <width>100</width>
-        <height>100</height>
+        <width>700</width>
+        <height>700</height>
         <depth>3</depth>
     </size>
     <segmented>0</segmented>
-    <object>
-        <name>adult_females</name>
-        <pose>Unspecified</pose>
-        <truncated>0</truncated>
-        <difficult>0</difficult>
-        <bndbox>
-            <xmin>48</xmin>
-            <ymin>12</ymin>
-            <xmax>128</xmax>
-            <ymax>92</ymax>
-        </bndbox>
-    </object>    <object>
-        <name>adult_females</name>
-        <pose>Unspecified</pose>
-        <truncated>0</truncated>
-        <difficult>0</difficult>
-        <bndbox>
-            <xmin>34</xmin>
-            <ymin>31</ymin>
-            <xmax>114</xmax>
-            <ymax>111</ymax>
-        </bndbox>
-    </object>    <object>
-        <name>adult_females</name>
-        <pose>Unspecified</pose>
-        <truncated>0</truncated>
-        <difficult>0</difficult>
-        <bndbox>
-            <xmin>15</xmin>
-            <ymin>7</ymin>
-            <xmax>95</xmax>
-            <ymax>87</ymax>
-        </bndbox>
-    </object>    <object>
-        <name>adult_females</name>
-        <pose>Unspecified</pose>
-        <truncated>0</truncated>
-        <difficult>0</difficult>
-        <bndbox>
-            <xmin>5</xmin>
-            <ymin>29</ymin>
-            <xmax>85</xmax>
-            <ymax>109</ymax>
-        </bndbox>
-    </object>    <object>
-        <name>adult_females</name>
-        <pose>Unspecified</pose>
-        <truncated>0</truncated>
-        <difficult>0</difficult>
-        <bndbox>
-            <xmin>-7</xmin>
-            <ymin>-21</ymin>
-            <xmax>73</xmax>
-            <ymax>59</ymax>
-        </bndbox>
-    </object>    <object>
-        <name>juveniles</name>
-        <pose>Unspecified</pose>
-        <truncated>0</truncated>
-        <difficult>0</difficult>
-        <bndbox>
-            <xmin>48</xmin>
-            <ymin>27</ymin>
-            <xmax>108</xmax>
-            <ymax>87</ymax>
-        </bndbox>
-    </object>    <object>
-        <name>juveniles</name>
-        <pose>Unspecified</pose>
-        <truncated>0</truncated>
-        <difficult>0</difficult>
-        <bndbox>
-            <xmin>47</xmin>
-            <ymin>16</ymin>
-            <xmax>107</xmax>
-            <ymax>76</ymax>
-        </bndbox>
-    </object>
+
 </annotation>

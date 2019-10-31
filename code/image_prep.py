@@ -12,7 +12,7 @@ from tqdm import tqdm
 sys.path.append(os.getcwd()+'/code/')
 
 
-class Dataset(object):
+class Raw_dataset(object):
 
     def __init__(self, img_color_mode='rgb', config='config.json'):
         """ Initiate class with the data directories needed.
@@ -30,7 +30,6 @@ class Dataset(object):
         self.r = conf['r']  # % scaling down of the chips
         self.dataframe_path = conf['dataframe_path']  # location of the coordinates dataframe
         # Setting target image and mask sizes as (height, width, number of channels).
-        self._img_channels = self.find_numb_channels(self._img_color_mode)
         self._img_color_mode = img_color_mode
         self.filenames = glob(self._unmarked_data_dir + '*.jpg')
         self.filenames = [f.split('\\')[1] for f in self.filenames]
@@ -194,12 +193,12 @@ class Dataset(object):
         self.dataframe.to_csv(self.dataframe_path)
         return
 
-    
+
 ## TODO: Create .xml file for each image with pascal VOC writer module
 ## TODO: final desired inputs = directory of images and one .xml file for each image
 
 
-images = Dataset()  # initialize dataset object
+images = Raw_dataset()  # initialize dataset object
 images.reset_small_chips()  # clears out the smaller chip directory; only use if you want to reset chips
 images.mini_chipper()  # creates chips
 images.create_df()  # creates a dataframe to store coordinates of sea lions in each chip

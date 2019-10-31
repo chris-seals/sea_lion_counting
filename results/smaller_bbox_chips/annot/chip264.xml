@@ -6,10 +6,65 @@
         <database>Unknown</database>
     </source>
     <size>
-        <width>100</width>
-        <height>100</height>
+        <width>700</width>
+        <height>700</height>
         <depth>3</depth>
     </size>
     <segmented>0</segmented>
-
+    <object>
+        <name>juveniles</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>225</xmin>
+            <ymin>559</ymin>
+            <xmax>285</xmax>
+            <ymax>619</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>juveniles</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>216</xmin>
+            <ymin>407</ymin>
+            <xmax>276</xmax>
+            <ymax>467</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>juveniles</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>202</xmin>
+            <ymin>402</ymin>
+            <xmax>262</xmax>
+            <ymax>462</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>juveniles</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>192</xmin>
+            <ymin>386</ymin>
+            <xmax>252</xmax>
+            <ymax>446</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>juveniles</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>118</xmin>
+            <ymin>308</ymin>
+            <xmax>178</xmax>
+            <ymax>368</ymax>
+        </bndbox>
+    </object>
 </annotation>
