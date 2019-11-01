@@ -7,6 +7,17 @@ import numpy as np
 from mrcnn.utils import Dataset
 from mrcnn.visualize import display_instances
 from mrcnn.utils import extract_bboxes
+from mrcnn.utils import Dataset
+from mrcnn.config import Config
+from mrcnn.model import MaskRCNN
+
+import tensorflow as tf
+tfconfig = tf.ConfigProto()
+tfconfig.gpu_options.allow_growth = True
+tf.keras.backend.set_session(tf.Session(config=tfconfig))
+from keras.callbacks import TensorBoard
+from time import time
+
 
 
 with open('config.json') as config_file:
@@ -17,8 +28,9 @@ class_names = conf['class_names']  # list of sea lion classes
 # self._chip_size = conf['chip_size']  # h/w of chip sizes
 # self.dataframe_path = conf['dataframe_path']  # location of the coordinates dataframe
 annot_path = conf['annotation_file_path']
-
-
+model_dir = conf['model_dir']
+#tensorboard = TensorBoard(log_dir=model_dir+'/logs/{}'.format(time()))
+tensorboard = TensorBoard(log_dir=model_dir+"logs/{}".format(time()))
 # self.chip_sizes = conf['chip_sizes']
 class SeaLionDataset(Dataset):
 
@@ -37,11 +49,11 @@ class SeaLionDataset(Dataset):
 		for filename in os.listdir(images_dir):
 			# extract image id
 			image_id = filename[:-4]
-			# skip all images after 270 if we are building the training set
-			if is_train and int(image_id) >= 270:
+			# skip all images after 200 if we are building the training set
+			if is_train and int(image_id) >= 200:
 				continue
-			# skip all images before 270 if we are building the test/val set
-			if not is_train and int(image_id) < 270:
+			# skip all images before 200 if we are building the test/val set
+			if not is_train and int(image_id) < 200:
 				continue
 			# skip bad images
 			img_path = images_dir + filename
@@ -77,7 +89,7 @@ class SeaLionDataset(Dataset):
 		info = self.image_info[image_id]
 		# define box file location
 		path = info['annotation']
-		print('path=',path)
+		#print('path=',path)
 		# load XML
 		boxes, w, h = self.extract_boxes(path)
 		# create one array for all masks, each on a different channel
@@ -87,18 +99,14 @@ class SeaLionDataset(Dataset):
 		class_ids = list()
 		for i in range(len(boxes)):
 			box = boxes[i]
-			print('box=',box)
+			#print('box=',box)
 			row_s, row_e = box[0], box[2]
 			col_s, col_e = box[1], box[3]
 			masks[row_s:row_e, col_s:col_e,i] = 1  # i
-			print('self.class_names=',self.class_names)
+			#print('self.class_names=',self.class_names)
 			class_ids.append(self.class_names.index(box[4]))
-			print(len(masks))
+			#print(len(masks))
 		return masks, np.asarray(class_ids, dtype='int32')
-
-## TODO: Add this as last portion of load_mask to account for multiple classes
-		# Return mask, and array of class IDs of each instance.
-		# return mask, info['class_ids']
 
 
 	# load an image reference
@@ -106,40 +114,41 @@ class SeaLionDataset(Dataset):
 		info = self.image_info[image_id]
 		return info['path']
 
-# train set
-# train_set = SeaLionDataset()
-# train_set.load_dataset('sea_lions', is_train=True)
-# train_set.prepare()
-# print('Train: %d' % len(train_set.image_ids))
-#
-# # test/val set
-# test_set = SeaLionDataset()
-# test_set.load_dataset('sea_lions', is_train=False)
-# test_set.prepare()
-# print('Test: %d' % len(test_set.image_ids))
-# extract details form annotation file
-# boxes, w, h = extract_boxes('../results/smaller_bbox_chips/annot/chip19.xml')
-# summarize extracted details
-# print(boxes, w, h)
+# define a configuration for the model
+class SeaLionConfig(Config):
+	# define the name of the configuration
+	NAME = "sea_lion_cfg"
+	# number of classes (background + sea lion types)
+	NUM_CLASSES = 1 + 5
+	# number of training steps per epoch
+	STEPS_PER_EPOCH = 200
+
+	GPU_COUNT = 1
+
+	IMAGES_PER_GPU = 1
+
+if __name__ == "__main__":
+	# prepare train set
+	train_set = SeaLionDataset()
+	train_set.load_dataset('sea_lions', is_train=True)
+	train_set.prepare()
+	print('Train: %d' % len(train_set.image_ids))
+	# prepare test/val set
+	test_set = SeaLionDataset()
+	test_set.load_dataset('sea_lions', is_train=False)
+	test_set.prepare()
+	print('Test: %d' % len(test_set.image_ids))
+	# prepare config
+	config = SeaLionConfig()
+	config.display()
+	# define the model
+	model = MaskRCNN(mode='training', model_dir=model_dir, config=config)
+	# load weights (mscoco) and exclude the output layers
+	model.load_weights(model_dir+'mask_rcnn_coco.h5', by_name=True,
+	                   exclude=["mrcnn_class_logits", "mrcnn_bbox_fc",  "mrcnn_bbox", "mrcnn_mask"])
+	# train weights (output layers or 'heads')
+	model.train(train_set, test_set, learning_rate=config.LEARNING_RATE, epochs=5, layers='heads')
 
 
-# train set
-train_set = SeaLionDataset()
-train_set.load_dataset('sea_lions', is_train=True)
-train_set.prepare()
-# load an image
+	##### DOWNLOAD WEIGHTS FILE HERE: https://github.com/matterport/Mask_RCNN/releases/download/v2.0/mask_rcnn_coco.h5 #####
 
-# enumerate all images in the dataset
-# define image id
-image_id = 135
-
-# load the image
-image = train_set.load_image(image_id)
-print(image)
-# load the masks and the class ids
-mask, class_ids = train_set.load_mask(image_id)
-print(mask, class_ids)
-# extract bounding boxes from the masks
-bbox = extract_bboxes(mask)
-# display image with masks and bounding boxes
-display_instances(image, bbox, mask, class_ids, train_set.class_names)

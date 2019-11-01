@@ -71,10 +71,10 @@ class Labeler(object):
                     annot_writer.addObject(sl_type, x_min, y_min, x_max, y_max)
 
             annot_writer.save(self.annot_path+index.split('.')[0]+'.xml')
-
-labeler = Labeler()
-labeler.reset_xml()
-labeler.create_dir()
-labeler.create_xml()
+if __name__ == "__main__":
+    labeler = Labeler()
+    labeler.reset_xml()
+    labeler.create_dir()
+    labeler.create_xml()
 
 ## TODO : Fix the chip sizes to reflect a smaller input image size. Original chip size still reflects full-sized image

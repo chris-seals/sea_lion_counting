@@ -197,9 +197,9 @@ class Raw_dataset(object):
 ## TODO: Create .xml file for each image with pascal VOC writer module
 ## TODO: final desired inputs = directory of images and one .xml file for each image
 
-
-images = Raw_dataset()  # initialize dataset object
-images.reset_small_chips()  # clears out the smaller chip directory; only use if you want to reset chips
-images.mini_chipper()  # creates chips
-images.create_df()  # creates a dataframe to store coordinates of sea lions in each chip
-images.retrieve_coords()  # finds coordinates of each sea lion
+if __name__ == "__main__":
+    images = Raw_dataset()  # initialize dataset object
+    images.reset_small_chips()  # clears out the smaller chip directory; only use if you want to reset chips
+    images.mini_chipper()  # creates chips
+    images.create_df()  # creates a dataframe to store coordinates of sea lions in each chip
+    images.retrieve_coords()  # finds coordinates of each sea lion

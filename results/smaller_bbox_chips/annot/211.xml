@@ -11,5 +11,71 @@
         <depth>3</depth>
     </size>
     <segmented>0</segmented>
-
+    <object>
+        <name>adult_females</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>604</xmin>
+            <ymin>623</ymin>
+            <xmax>674</xmax>
+            <ymax>693</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>adult_females</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>591</xmin>
+            <ymin>650</ymin>
+            <xmax>661</xmax>
+            <ymax>720</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>adult_males</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>602</xmin>
+            <ymin>584</ymin>
+            <xmax>702</xmax>
+            <ymax>684</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>juveniles</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>664</xmin>
+            <ymin>620</ymin>
+            <xmax>714</xmax>
+            <ymax>670</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>juveniles</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>653</xmin>
+            <ymin>563</ymin>
+            <xmax>703</xmax>
+            <ymax>613</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>juveniles</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>561</xmin>
+            <ymin>638</ymin>
+            <xmax>611</xmax>
+            <ymax>688</ymax>
+        </bndbox>
+    </object>
 </annotation>

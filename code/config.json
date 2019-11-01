@@ -13,5 +13,6 @@
 	"chip_size" : 700,
 	"r" : 1.0,
 	"dataframe_path" : "../results/coordinates.csv",
-	"annotation_file_path" : "../results/smaller_bbox_chips/annot/"
+	"annotation_file_path" : "../results/smaller_bbox_chips/annot/",
+	"model_dir" : "../data/model_data/"
 }

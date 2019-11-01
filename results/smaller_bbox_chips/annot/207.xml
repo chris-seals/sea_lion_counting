@@ -11,16 +11,5 @@
         <depth>3</depth>
     </size>
     <segmented>0</segmented>
-    <object>
-        <name>subadult_males</name>
-        <pose>Unspecified</pose>
-        <truncated>0</truncated>
-        <difficult>0</difficult>
-        <bndbox>
-            <xmin>296</xmin>
-            <ymin>153</ymin>
-            <xmax>386</xmax>
-            <ymax>243</ymax>
-        </bndbox>
-    </object>
+
 </annotation>
