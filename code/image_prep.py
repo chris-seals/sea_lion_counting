@@ -69,9 +69,9 @@ class Raw_dataset(object):
 
             for i in range(int(w1 // width)):
                 for j in range(int(h1 // width)):
-                    cv2.imwrite(os.path.join(self._small_chip_unmarked_dir, f'chip{img_count}.jpg'),
+                    cv2.imwrite(os.path.join(self._small_chip_unmarked_dir, f'{img_count}.jpg'),
                                 img[j * width:j * width + width, i * width:i * width + width, :])
-                    cv2.imwrite(os.path.join(self._small_chip_dotted_dir, f'chip{img_count}.jpg'),
+                    cv2.imwrite(os.path.join(self._small_chip_dotted_dir, f'{img_count}.jpg'),
                                 img_d[j * width:j * width + width, i * width:i * width + width, :])
                     img_count += 1
                     if img_count % 200 == 0:
@@ -122,8 +122,8 @@ class Raw_dataset(object):
         for file in tqdm(self.chip_index,total=len(self.chip_index)):
             dotted_image = self._small_chip_dotted_dir + file
             clean_image = self._small_chip_unmarked_dir + file
-
-            assert dotted_image[-8:] == clean_image[-8:]
+            #print(dotted_image,clean_image)
+            #assert dotted_image[:-4] == clean_image[:-4]
             """ Given two images - one dotted and its clean match - return blobs """
             # Read in images, grab dot locations
             dotted_image = cv2.imread(dotted_image)
