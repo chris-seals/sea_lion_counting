@@ -20,3 +20,6 @@
 
 # Large pkl files
 *.pkl
+
+# Large weights file
+*.h5
