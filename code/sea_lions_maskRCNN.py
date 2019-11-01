@@ -81,8 +81,8 @@ class SeaLionDataset(Dataset):
 		# load XML
 		boxes, w, h = self.extract_boxes(path)
 		# create one array for all masks, each on a different channel
-		masks = np.zeros([h, w], dtype='uint8')
-		#masks = np.zeros([h, w, len(boxes)], dtype='uint8')
+		#masks = np.zeros([h, w], dtype='uint8')
+		masks = np.zeros([h, w, len(boxes)], dtype='uint8')
 		# create masks
 		class_ids = list()
 		for i in range(len(boxes)):
@@ -90,7 +90,7 @@ class SeaLionDataset(Dataset):
 			print('box=',box)
 			row_s, row_e = box[0], box[2]
 			col_s, col_e = box[1], box[3]
-			masks[row_s:row_e, col_s:col_e] = 1  # i
+			masks[row_s:row_e, col_s:col_e,i] = 1  # i
 			print('self.class_names=',self.class_names)
 			class_ids.append(self.class_names.index(box[4]))
 			print(len(masks))
@@ -131,11 +131,14 @@ train_set.prepare()
 
 # enumerate all images in the dataset
 # define image id
-image_id = 75
+image_id = 135
+
 # load the image
 image = train_set.load_image(image_id)
+print(image)
 # load the masks and the class ids
 mask, class_ids = train_set.load_mask(image_id)
+print(mask, class_ids)
 # extract bounding boxes from the masks
 bbox = extract_bboxes(mask)
 # display image with masks and bounding boxes
