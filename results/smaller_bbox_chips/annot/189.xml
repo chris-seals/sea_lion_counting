@@ -17,10 +17,10 @@
         <truncated>0</truncated>
         <difficult>0</difficult>
         <bndbox>
-            <xmin>578</xmin>
-            <ymin>458</ymin>
-            <xmax>698</xmax>
-            <ymax>578</ymax>
+            <xmin>588</xmin>
+            <ymin>468</ymin>
+            <xmax>688</xmax>
+            <ymax>568</ymax>
         </bndbox>
     </object>    <object>
         <name>subadult_males</name>
@@ -28,10 +28,10 @@
         <truncated>0</truncated>
         <difficult>0</difficult>
         <bndbox>
-            <xmin>578</xmin>
-            <ymin>542</ymin>
-            <xmax>678</xmax>
-            <ymax>642</ymax>
+            <xmin>583</xmin>
+            <ymin>547</ymin>
+            <xmax>673</xmax>
+            <ymax>637</ymax>
         </bndbox>
     </object>
 </annotation>

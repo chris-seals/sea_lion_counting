@@ -4,11 +4,11 @@
 	"small_chip_unmarked_dir" : "../results/smaller_bbox_chips/Train/",
 	"small_chip_dotted_dir"	: "../results/smaller_bbox_chips/TrainDotted/",
 	"class_names" : ["adult_females", "adult_males", "juveniles", "pups", "subadult_males"],
-	"chip_sizes" : {"adult_females":80,
-    				"adult_males":120,
-    				"juveniles":60,
-    				"pups":40,
-					"subadult_males":100
+	"chip_sizes" : {"adult_females":70,
+    				"adult_males":100,
+    				"juveniles":50,
+    				"pups":30,
+					"subadult_males":90
 					},
 	"chip_size" : 700,
 	"r" : 1.0,

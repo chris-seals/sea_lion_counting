@@ -5,6 +5,9 @@ from xml.etree import ElementTree
 from matplotlib import pyplot
 import numpy as np
 from mrcnn.utils import Dataset
+from mrcnn.visualize import display_instances
+from mrcnn.utils import extract_bboxes
+
 
 with open('config.json') as config_file:
 	conf = json.load(config_file)
@@ -125,14 +128,15 @@ train_set = SeaLionDataset()
 train_set.load_dataset('sea_lions', is_train=True)
 train_set.prepare()
 # load an image
-image_id = 135
+
+# enumerate all images in the dataset
+# define image id
+image_id = 75
+# load the image
 image = train_set.load_image(image_id)
-print(image.shape)
-# load image mask
+# load the masks and the class ids
 mask, class_ids = train_set.load_mask(image_id)
-print(mask.shape)
-# plot image
-pyplot.imshow(image)
-# plot mask
-pyplot.imshow(mask[:, :], cmap='gray', alpha=0.5)
-pyplot.show()
+# extract bounding boxes from the masks
+bbox = extract_bboxes(mask)
+# display image with masks and bounding boxes
+display_instances(image, bbox, mask, class_ids, train_set.class_names)
