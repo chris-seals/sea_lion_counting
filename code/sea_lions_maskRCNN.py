@@ -144,10 +144,10 @@ if __name__ == "__main__":
 	# define the model
 	model = MaskRCNN(mode='training', model_dir=model_dir, config=config)
 	# load weights (mscoco) and exclude the output layers
-	model.load_weights(model_dir+'mask_rcnn_coco.h5', by_name=True,
+	model.load_weights(model_dir+'mask_rcnn_sea_lion_cfg_0005.h5', by_name=True,
 	                   exclude=["mrcnn_class_logits", "mrcnn_bbox_fc",  "mrcnn_bbox", "mrcnn_mask"])
 	# train weights (output layers or 'heads')
-	model.train(train_set, test_set, learning_rate=config.LEARNING_RATE, epochs=5, layers='heads')
+	model.train(train_set, test_set, learning_rate=config.LEARNING_RATE, epochs=20, layers='heads')
 
 
 	##### DOWNLOAD WEIGHTS FILE HERE: https://github.com/matterport/Mask_RCNN/releases/download/v2.0/mask_rcnn_coco.h5 #####
