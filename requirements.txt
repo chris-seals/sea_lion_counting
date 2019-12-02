@@ -1,7 +1,7 @@
 # This file may be used to create an environment using:
 # $ conda create --name <env> --file <this file>
 # platform: win-64
-_tflow_select=2.1.0=gpu
+#_tflow_select=2.1.0=gpu
 absl-py=0.7.1=py36_0
 alabaster=0.7.12=pypi_0
 appdirs=1.4.3=pypi_0
